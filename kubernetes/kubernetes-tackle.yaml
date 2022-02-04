@@ -285,7 +285,7 @@ spec:
           emptyDir: {}
       initContainers:
         - name: keycloak-theme
-          image: quay.io/konveyor/tackle-keycloak-init:0.1-SNAPSHOT
+          image: quay.io/carlosthe19916/tackle-keycloak-init:mta-theme
           volumeMounts:
             - name: theme-volume
               mountPath: /deployments
@@ -2446,7 +2446,7 @@ spec:
     spec:
       containers:
         - name: tackle-ui
-          image: quay.io/konveyor/tackle-ui:main
+          image: quay.io/carlosthe19916/tackle-ui:mta-theme
           ports:
             - containerPort: 8080
               protocol: TCP
