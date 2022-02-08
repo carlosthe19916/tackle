@@ -272,7 +272,13 @@ objects:
                     secretKeyRef:
                       name: keycloak-postgresql
                       key: database-name
-              resources: {}
+              resources:
+                limits:
+                  cpu: 500m
+                  memory: 512Mi
+                requests:
+                  cpu: 10m
+                  memory: 64Mi
               livenessProbe:
                 exec:
                   command:
@@ -417,6 +423,13 @@ objects:
                 periodSeconds: 10
                 successThreshold: 1
                 failureThreshold: 6
+              resources:
+                limits:
+                  cpu: '2'
+                  memory: 1Gi
+                requests:
+                  cpu: 10m
+                  memory: 1Gi
   - apiVersion: v1
     data:
       tackle-realm.json: |
@@ -2215,7 +2228,13 @@ objects:
                     secretKeyRef:
                       name: controls-postgresql
                       key: database-name
-              resources: {}
+              resources:
+                limits:
+                  cpu: 500m
+                  memory: 512Mi
+                requests:
+                  cpu: 10m
+                  memory: 64Mi
               livenessProbe:
                 exec:
                   command:
@@ -2306,7 +2325,13 @@ objects:
                     secretKeyRef:
                       name: application-inventory-postgresql
                       key: database-name
-              resources: {}
+              resources:
+                limits:
+                  cpu: 500m
+                  memory: 512Mi
+                requests:
+                  cpu: 10m
+                  memory: 64Mi
               livenessProbe:
                 exec:
                   command:
@@ -2397,7 +2422,13 @@ objects:
                     secretKeyRef:
                       name: pathfinder-postgresql
                       key: database-name
-              resources: { }
+              resources:
+                limits:
+                  cpu: 500m
+                  memory: 512Mi
+                requests:
+                  cpu: 10m
+                  memory: 64Mi
               livenessProbe:
                 exec:
                   command:
@@ -2501,7 +2532,13 @@ objects:
                     - "-c"
                     - "[ -f /run/nginx.pid ] && ps -A | grep nginx"
                 periodSeconds: 5
-              resources: {}
+              resources:
+                limits:
+                  cpu: 500m
+                  memory: 512Mi
+                requests:
+                  cpu: 10m
+                  memory: 64Mi
               terminationMessagePath: "/dev/termination-log"
               terminationMessagePolicy: File
               imagePullPolicy: Always
@@ -2687,6 +2724,13 @@ objects:
                 periodSeconds: 30
                 successThreshold: 1
                 timeoutSeconds: 10
+              resources:
+                limits:
+                  cpu: 500m
+                  memory: 384Mi
+                requests:
+                  cpu: 10m
+                  memory: 64Mi
   - apiVersion: apps/v1
     kind: Deployment
     metadata:
@@ -2766,6 +2810,13 @@ objects:
                 periodSeconds: 30
                 successThreshold: 1
                 timeoutSeconds: 10
+              resources:
+                limits:
+                  cpu: 500m
+                  memory: 384Mi
+                requests:
+                  cpu: 10m
+                  memory: 64Mi
   - apiVersion: apps/v1
     kind: Deployment
     metadata:
@@ -2845,6 +2896,13 @@ objects:
                 periodSeconds: 30
                 successThreshold: 1
                 timeoutSeconds: 10
+              resources:
+                limits:
+                  cpu: 500m
+                  memory: 384Mi
+                requests:
+                  cpu: 10m
+                  memory: 64Mi
   - kind: Route
     apiVersion: route.openshift.io/v1
     metadata:
