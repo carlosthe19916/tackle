@@ -214,7 +214,13 @@ spec:
                 secretKeyRef:
                   name: keycloak-postgresql
                   key: database-name
-          resources: {}
+          resources:
+            limits:
+              cpu: 500m
+              memory: 512Mi
+            requests:
+              cpu: 10m
+              memory: 64Mi
           livenessProbe:
             exec:
               command:
@@ -344,6 +350,13 @@ spec:
             periodSeconds: 10
             successThreshold: 1
             failureThreshold: 6
+          resources:
+            limits:
+              cpu: '2'
+              memory: 1Gi
+            requests:
+              cpu: 10m
+              memory: 1Gi
 ---
 apiVersion: v1
 data:
@@ -2147,7 +2160,13 @@ spec:
                 secretKeyRef:
                   name: controls-postgresql
                   key: database-name
-          resources: {}
+          resources:
+            limits:
+              cpu: 500m
+              memory: 512Mi
+            requests:
+              cpu: 10m
+              memory: 64Mi
           livenessProbe:
             exec:
               command:
@@ -2241,7 +2260,13 @@ spec:
                 secretKeyRef:
                   name: application-inventory-postgresql
                   key: database-name
-          resources: {}
+          resources:
+            limits:
+              cpu: 500m
+              memory: 512Mi
+            requests:
+              cpu: 10m
+              memory: 64Mi
           livenessProbe:
             exec:
               command:
@@ -2335,7 +2360,13 @@ spec:
                 secretKeyRef:
                   name: pathfinder-postgresql
                   key: database-name
-          resources: {}
+          resources:
+            limits:
+              cpu: 500m
+              memory: 512Mi
+            requests:
+              cpu: 10m
+              memory: 64Mi
           livenessProbe:
             exec:
               command:
@@ -2480,7 +2511,13 @@ spec:
               port: 8080
             initialDelaySeconds: 10
             periodSeconds: 5
-          resources: {}
+          resources:
+            limits:
+              cpu: 500m
+              memory: 512Mi
+            requests:
+              cpu: 10m
+              memory: 64Mi
           terminationMessagePath: /dev/termination-log
           terminationMessagePolicy: File
           imagePullPolicy: Always
@@ -2670,6 +2707,13 @@ spec:
             periodSeconds: 30
             successThreshold: 1
             timeoutSeconds: 10
+          resources:
+            limits:
+              cpu: 500m
+              memory: 384Mi
+            requests:
+              cpu: 10m
+              memory: 64Mi
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -2750,6 +2794,13 @@ spec:
             periodSeconds: 30
             successThreshold: 1
             timeoutSeconds: 10
+          resources:
+            limits:
+              cpu: 500m
+              memory: 384Mi
+            requests:
+              cpu: 10m
+              memory: 64Mi
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -2830,3 +2881,10 @@ spec:
             periodSeconds: 30
             successThreshold: 1
             timeoutSeconds: 10
+          resources:
+            limits:
+              cpu: 500m
+              memory: 384Mi
+            requests:
+              cpu: 10m
+              memory: 64Mi
