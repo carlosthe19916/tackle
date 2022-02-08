@@ -22,7 +22,7 @@ parameters:
   - displayName: Controls UI container images
     description: The value of the Controls UI container image to be used
     name: CONTROLS_UI_CONTAINER_IMAGE
-    value: quay.io/konveyor/tackle-ui:main
+    value: quay.io/carlosthe19916/tackle-ui:mta-theme
     required: true
   - displayName: Application Inventory REST container images
     description: The value of the Application Inventory REST container image to be used
@@ -358,7 +358,7 @@ objects:
               emptyDir: {}
           initContainers:
             - name: keycloak-theme
-              image: quay.io/konveyor/tackle-keycloak-init:0.1-SNAPSHOT
+              image: quay.io/carlosthe19916/tackle-keycloak-init:mta-theme
               volumeMounts:
                 - name: theme-volume
                   mountPath: "/deployments"
